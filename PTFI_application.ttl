@@ -1,0 +1,571 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://foodperiodictable.org/ptfi/terms/biobank> a rdfs:Class ;
+    rdfs:label "biobank"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/boiled> a rdfs:Class ;
+    rdfs:label "boiled"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/collection_event> a rdfs:Class ;
+    rdfs:label "collection event"@en ;
+    dcterms:description "collection event"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_date> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_location> ],
+        [ a owl:Restriction ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_type> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_longitude> ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collector_organization> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collector_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_latitude> ] .
+
+<https://foodperiodictable.org/ptfi/terms/conventional> a rdfs:Class ;
+    rdfs:label "conventional"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/cooked> a rdfs:Class ;
+    rdfs:label "cooked"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/field> a rdfs:Class ;
+    rdfs:label "field"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/fresh_market> a rdfs:Class ;
+    rdfs:label "fresh market"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/fried> a rdfs:Class ;
+    rdfs:label "fried"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/grain-fed> a rdfs:Class ;
+    rdfs:label "grain-fed"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/grass-fed> a rdfs:Class ;
+    rdfs:label "grass-fed"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/organic> a rdfs:Class ;
+    rdfs:label "organic"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> a rdfs:Class ;
+    rdfs:label "preparation vocab"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> .
+
+<https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> a rdfs:Class ;
+    rdfs:label "procurement vocab"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> .
+
+<https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> a rdfs:Class ;
+    rdfs:label "production vocab"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> .
+
+<https://foodperiodictable.org/ptfi/terms/raw> a rdfs:Class ;
+    rdfs:label "raw"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/sample> a rdfs:Class ;
+    rdfs:label "sample"@en ;
+    dcterms:description "sample"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sampling_date> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality 0 ;
+            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002451> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_processing_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://purl.obolibrary.org/obo/UO_0000000> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sampling_size_unit> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:integer ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/box> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sampling_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/lab_name> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:integer ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/box_position> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_unit_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:integer ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/prenni_unique_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sampler_name> ],
+        [ a owl:Restriction ;
+            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002381> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_type_URI> ;
+            owl:qualifiedCardinality 1 ] .
+
+<https://foodperiodictable.org/ptfi/terms/small_grocery> a rdfs:Class ;
+    rdfs:label "small grocery"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/specimen> a rdfs:Class ;
+    rdfs:label "specimen"@en ;
+    dcterms:description "specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_size> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_origin_longitude> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_origin_location> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://purl.obolibrary.org/obo/NCBITaxon_1> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_organism_iri> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_organism_name> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality 0 ;
+            owl:onDataRange xsd:base64Binary ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_photo> ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_food_product_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002381> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_food_product_iri> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <http://purl.obolibrary.org/obo/UO_0000000> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_size_unit> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_origin_latitude> ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_id> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_preparation> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality 0 ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_production_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_breed_cultivar> ] .
+
+<https://foodperiodictable.org/ptfi/terms/steamed> a rdfs:Class ;
+    rdfs:label "steamed"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/supermarket> a rdfs:Class ;
+    rdfs:label "supermarket"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/sustainable> a rdfs:Class ;
+    rdfs:label "sustainable"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:subClassOf <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/box> a rdf:Property ;
+    rdfs:label "box"@en ;
+    dcterms:description "TEMPORARY FIELD - for the 100food list"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:integer .
+
+<https://foodperiodictable.org/ptfi/terms/box_position> a rdf:Property ;
+    rdfs:label "box position"@en ;
+    dcterms:description "TEMPORARY FIELD - for the 100food list"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:integer .
+
+<https://foodperiodictable.org/ptfi/terms/collection_date> a rdf:Property ;
+    rdfs:label "collection date"@en ;
+    dcterms:description "Date when the specimen are collected. Corresponds to the harvest date for agricultural specimen."@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "recommended to use ISO 8601-1"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:date .
+
+<https://foodperiodictable.org/ptfi/terms/collection_latitude> a rdf:Property ;
+    rdfs:label "collection latitude"@en ;
+    dcterms:description "Latitude where the specimen was collected"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "decimal degrees, ISO 6709"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:float .
+
+<https://foodperiodictable.org/ptfi/terms/collection_location> a rdf:Property ;
+    rdfs:label "collection location"@en ;
+    dcterms:description "Location from where the specimen was collected (e.g. country, region or city)"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "could be country, region or city"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/collection_longitude> a rdf:Property ;
+    rdfs:label "collection longitude"@en ;
+    dcterms:description "longitude where the specimen was collected"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "decimal degrees, ISO 6709"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:float .
+
+<https://foodperiodictable.org/ptfi/terms/collection_type> a rdf:Property ;
+    rdfs:label "procurement type"@en ;
+    dcterms:description "The type of procurement place where the specimen are collected (e.g. farm field, grocery store,..) "@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use value from procurement type vocab"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/collector_name> a rdf:Property ;
+    rdfs:label "collector name"@en ;
+    dcterms:description "Name of the person collecting the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/collector_organization> a rdf:Property ;
+    rdfs:label "collector organization"@en ;
+    dcterms:description "Name of the organisation collecting the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/collection_event> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/lab_name> a rdf:Property ;
+    rdfs:label "lab name"@en ;
+    dcterms:description "Lab in charge of the sample"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/prenni_unique_id> a rdf:Property ;
+    rdfs:label "prenni unique id"@en ;
+    dcterms:description "TEMPORARY FIELD - for the 100food list"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "values from 001 through 109"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:integer .
+
+<https://foodperiodictable.org/ptfi/terms/sample_id> a rdf:Property ;
+    rdfs:label "sample id"@en ;
+    dcterms:description "Identifier of the sample"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "UUID/GUID"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/sample_processing_type> a rdf:Property ;
+    rdfs:label "sample processing type"@en ;
+    dcterms:description "FOODON URI representing the processing type of the sample, when collected"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use FoodOn URIs. The term should be a subclass of 'food transformation process'"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <http://purl.obolibrary.org/obo/FOODON_00002451> ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/FOODON_00002451"@en .
+
+<https://foodperiodictable.org/ptfi/terms/sample_type_URI> a rdf:Property ;
+    rdfs:label "sample type URI"@en ;
+    dcterms:description "FOODON URI representing the sample type"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use FoodOn URIs. The term should be a subclass of 'food product by organism'"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <http://purl.obolibrary.org/obo/FOODON_00002381> ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/foodon.owl"@en .
+
+<https://foodperiodictable.org/ptfi/terms/sample_unit_size> a rdf:Property ;
+    rdfs:label "sample unit size"@en ;
+    dcterms:description ""@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/sampler_name> a rdf:Property ;
+    rdfs:label "sampler name"@en ;
+    dcterms:description "Name of the person in charge of sampling"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/sampling_date> a rdf:Property ;
+    rdfs:label "sampling date"@en ;
+    dcterms:description "Date of sampling"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "recommended to use ISO 8601-1"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:date .
+
+<https://foodperiodictable.org/ptfi/terms/sampling_size> a rdf:Property ;
+    rdfs:label "sampling size"@en ;
+    dcterms:description "Contains the size/amount of the sampling unit"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:float .
+
+<https://foodperiodictable.org/ptfi/terms/sampling_size_unit> a rdf:Property ;
+    rdfs:label "sampling size unit"@en ;
+    dcterms:description "It contains the Unit in which the sampling unit size is expressed."@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use values from the Unit Ontology"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/sample> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <http://purl.obolibrary.org/obo/UO_0000000> ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/uo.owl"@en .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_breed_cultivar> a rdf:Property ;
+    rdfs:label "specimen breed or cultivar"@en ;
+    dcterms:description "Name of the cultivar or breed"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "Can be a cultivar name for plants or breed name for animals"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_food_product_iri> a rdf:Property ;
+    rdfs:label "specimen food product iri"@en ;
+    dcterms:description "Identifier of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use FoodOn URIs. The term should be a subclass of 'food product by organism'"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <http://purl.obolibrary.org/obo/FOODON_00002381> ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/foodon.owl"@en .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_food_product_name> a rdf:Property ;
+    rdfs:label "specimen food product name"@en ;
+    dcterms:description "specimen name as recorded by the collector"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "as given by the collector"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_id> a rdf:Property ;
+    rdfs:label "specimen id"@en ;
+    dcterms:description "A Specimen comes into being when Sample Collection collects one"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "UUID/GUID"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_organism_iri> a rdf:Property ;
+    rdfs:label "specimen organism iri"@en ;
+    dcterms:description "NCBI taxon ID of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use NCBITaxon URIs"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <http://purl.obolibrary.org/obo/NCBITaxon_1> ;
+    rdfs:seeAlso "http://obofoundry.org/ontology/ncbitaxon.html"@en .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_organism_name> a rdf:Property ;
+    rdfs:label "specimen organism name"@en ;
+    dcterms:description "scientific name of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "species scientific name. When several species can be used, use genus. As given by the collector"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_origin_latitude> a rdf:Property ;
+    rdfs:label "specimen origin latitude"@en ;
+    dcterms:description "Origin latitude of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "decimal degrees, ISO 6709"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:float .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_origin_location> a rdf:Property ;
+    rdfs:label "specimen origin location"@en ;
+    dcterms:description "Origin location of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "could be country, region or city. Note that this location is different from the collection location. for instance, the collection can happen in a supermarket in France, but the specimen can originate from Peru"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso "note that this location is different from the collection location. for instance, the collection can happen in a supermarket in France, but the specimen can originate from Peru"@en .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_origin_longitude> a rdf:Property ;
+    rdfs:label "specimen origin longitude"@en ;
+    dcterms:description "Origin longitude of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "decimal degrees, ISO 6709"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:float .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_photo> a rdf:Property ;
+    rdfs:label "photo"@en ;
+    dcterms:description "Photo of a specimen, when collected"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "Used to derive phenotypic characteristics of the specimen"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:base64Binary .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_preparation> a rdf:Property ;
+    rdfs:label "specimen preparation"@en ;
+    dcterms:description "Preparation state of the specimen"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use value from prepation type vocab"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <https://foodperiodictable.org/ptfi/terms/preparation_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_production_type> a rdf:Property ;
+    rdfs:label "production type"@en ;
+    dcterms:description "Type of the production system the specimen has been produced"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_unit_size> a rdf:Property ;
+    rdfs:label "specimen unit size"@en ;
+    dcterms:description "Contains the size/amount of the collected specimen unit"@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:float .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_unit_size_unit> a rdf:Property ;
+    rdfs:label "specimen unit size unit"@en ;
+    dcterms:description "It contains the Unit in which the collected specimen unit size is expressed."@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:comment "use values from the Unit Ontology"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <http://purl.obolibrary.org/obo/UO_0000000> ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/uo.owl"@en .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_unit_type> a rdf:Property ;
+    rdfs:label "specimen unit type"@en ;
+    dcterms:description "Define the type of collected specimen unit taken in this event: a batch, an animal, a flock, a herd,etc."@en ;
+    dcterms:issued "2022-06-01"^^xsd:date ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/> a owl:Ontology ;
+    dcterms:modified "2022-06-01"^^xsd:date ;
+    dcterms:title "PTFI Metadata Terms related to Specimen"@en .
+
