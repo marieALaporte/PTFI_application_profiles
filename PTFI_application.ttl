@@ -73,32 +73,32 @@
     dcterms:issued "2022-12-01"^^xsd:date ;
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_type> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_latitude> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_longitude> ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collector_organization> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:date ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_date> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collector_organization> ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/procurement_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_type> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:string ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_location> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_longitude> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onDataRange xsd:string ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/collector_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/collection_latitude> ;
             owl:qualifiedCardinality 1 ] .
 
 <https://foodperiodictable.org/ptfi/terms/controlled> a rdfs:Class ;
@@ -336,40 +336,28 @@
     dcterms:issued "2022-12-01"^^xsd:date ;
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_id> ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_dry_weight> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:date ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparation_date> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_food_product_name> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:minQualifiedCardinality 1 ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/preparation_method_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparation_method> ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:string ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparer_name> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002381> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_food_product_iri> ;
+            owl:minQualifiedCardinality 1 ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/lab_processing_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_laboratory_processing> ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparation_date> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:float ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_wet_weight> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:minQualifiedCardinality 1 ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/sample_preparation_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparation> ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_dry_weight> ;
+            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002381> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_food_product_iri> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:string ;
@@ -377,8 +365,20 @@
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:minQualifiedCardinality 1 ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/lab_processing_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_laboratory_processing> ] .
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/sample_preparation_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparation> ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_food_product_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_id> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality 1 ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/preparation_method_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/sample_preparation_method> ] .
 
 <https://foodperiodictable.org/ptfi/terms/sample_preparation_vocab_vocab> a rdfs:Class ;
     rdfs:label "sample preparation vocab"@en ;
@@ -409,69 +409,69 @@
     dcterms:issued "2022-12-01"^^xsd:date ;
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002381> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_food_product_iri> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/unit_type_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_type> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:minQualifiedCardinality 1 ;
-            owl:onDataRange xsd:base64Binary ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_photo> ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_organism_name> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/ABS_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/speciment_abs_status> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onDataRange xsd:string ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_origin_location> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_breed_cultivar> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_id> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <http://purl.obolibrary.org/obo/NCBITaxon_1> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_organism_iri> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:minQualifiedCardinality 1 ;
-            owl:onClass <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_production_type> ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_food_product_name> ;
+            owl:onClass <http://purl.obolibrary.org/obo/FOODON_00002381> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_food_product_iri> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:minQualifiedCardinality 1 ;
             owl:onClass <https://foodperiodictable.org/ptfi/terms/specimen_preparation_vocab_vocab> ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_preparation> ],
         [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_organism_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_food_product_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onDataRange xsd:float ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_size> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/unit_type_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_type> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://foodperiodictable.org/ptfi/terms/temperature_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_temperature_collection> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_collection_temperature> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_breed_cultivar> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <http://purl.obolibrary.org/obo/NCBITaxon_1> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_organism_iri> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <http://purl.obolibrary.org/obo/UO_0000000> ;
             owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_unit_size_unit> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/ABS_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_abs_status> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:minQualifiedCardinality 1 ;
             owl:onClass <https://foodperiodictable.org/ptfi/terms/preparation_method_vocab_vocab> ;
-            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_preparation_method> ] .
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_preparation_method> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality 1 ;
+            owl:onDataRange xsd:base64Binary ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_photo> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality 1 ;
+            owl:onClass <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> ;
+            owl:onProperty <https://foodperiodictable.org/ptfi/terms/specimen_production_type> ] .
 
 <https://foodperiodictable.org/ptfi/terms/specimen_preparation_vocab_vocab> a rdfs:Class ;
     rdfs:label "specimen preparation vocab"@en ;
@@ -688,6 +688,15 @@
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:range xsd:float .
 
+<https://foodperiodictable.org/ptfi/terms/specimen_abs_status> a rdf:Property ;
+    rdfs:label "specimen ABS status"@en ;
+    dcterms:description "Access and Benefit Sharing (ABS) status of the specimen."@en ;
+    dcterms:issued "2022-12-01"^^xsd:date ;
+    rdfs:comment "use values from the ABS vocab"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <https://foodperiodictable.org/ptfi/terms/ABS_vocab_vocab> .
+
 <https://foodperiodictable.org/ptfi/terms/specimen_breed_cultivar> a rdf:Property ;
     rdfs:label "specimen breed or cultivar"@en ;
     dcterms:description "Name of the cultivar, variety, hybrid (plants) or breed (animals), or unknown"@en ;
@@ -696,6 +705,15 @@
     rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:range xsd:string .
+
+<https://foodperiodictable.org/ptfi/terms/specimen_collection_temperature> a rdf:Property ;
+    rdfs:label "specimen collection temperature"@en ;
+    dcterms:description "Temperature conditions at which the specimen was stored at collection. (e.g., if sample was flash frozen in liquid nitrogen at collection that would be \"controlled\")."@en ;
+    dcterms:issued "2022-12-01"^^xsd:date ;
+    rdfs:comment "use values from the temperature vocabulary"@en ;
+    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
+    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
+    rdfs:range <https://foodperiodictable.org/ptfi/terms/temperature_vocab_vocab> .
 
 <https://foodperiodictable.org/ptfi/terms/specimen_food_product_iri> a rdf:Property ;
     rdfs:label "specimen food product iri"@en ;
@@ -789,15 +807,6 @@
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:range <https://foodperiodictable.org/ptfi/terms/production_vocab_vocab> .
 
-<https://foodperiodictable.org/ptfi/terms/specimen_temperature_collection> a rdf:Property ;
-    rdfs:label "specimen temperature"@en ;
-    dcterms:description "Temperature conditions at which the specimen was stored at collection. (e.g., if sample was flash frozen in liquid nitrogen at collection that would be \"controlled\")."@en ;
-    dcterms:issued "2022-12-01"^^xsd:date ;
-    rdfs:comment "use values from the temperature vocabulary"@en ;
-    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
-    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
-    rdfs:range <https://foodperiodictable.org/ptfi/terms/temperature_vocab_vocab> .
-
 <https://foodperiodictable.org/ptfi/terms/specimen_unit_size> a rdf:Property ;
     rdfs:label "specimen unit size"@en ;
     dcterms:description "Specifiy the number of individuals or the amount of the specimen collected (e.g., 1 chicken, 3 apples, 150 grams of rice, 150 grams of ground beef, 0.50 L of oil). If unknown leave blank."@en ;
@@ -823,15 +832,6 @@
     rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
     rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
     rdfs:range <https://foodperiodictable.org/ptfi/terms/unit_type_vocab_vocab> .
-
-<https://foodperiodictable.org/ptfi/terms/speciment_abs_status> a rdf:Property ;
-    rdfs:label "specimen ABS status"@en ;
-    dcterms:description "Access and Benefit Sharing (ABS) status of the specimen."@en ;
-    dcterms:issued "2022-12-01"^^xsd:date ;
-    rdfs:comment "use values from the ABS vocab"@en ;
-    rdfs:domain <https://foodperiodictable.org/ptfi/terms/specimen> ;
-    rdfs:isDefinedBy <https://foodperiodictable.org/ptfi/terms/> ;
-    rdfs:range <https://foodperiodictable.org/ptfi/terms/ABS_vocab_vocab> .
 
 <https://foodperiodictable.org/ptfi/terms/> a owl:Ontology ;
     dcterms:modified "2022-12-01"^^xsd:date ;
